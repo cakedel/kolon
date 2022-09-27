@@ -21,14 +21,24 @@ const Header = () => {
         <nav className="Gnb">
           <ul>
             {GNbar.map((menu) => {
-              return (<li key={menu.id}>{menu.tit}</li>);
+              return (
+                <Link to="/">
+                  <li key={menu.id}>{menu.tit}</li>
+                </Link>
+              );
             })}
           </ul>
         </nav>
         <div className="sideBar">
-            <i className="xi-globus"/>
-            <i className="xi-search"/>
-            <i className="xi-mail-o"/>
+          <Link to="/">
+            <i className="xi-globus" />
+          </Link>
+          <Link to="/">
+            <i className="xi-search" />
+          </Link>
+          <Link to="/">
+            <i className="xi-mail-o" />
+          </Link>
         </div>
       </div>
     </header>
