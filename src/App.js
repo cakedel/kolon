@@ -7,7 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import Stock from "./components/Stock";
 import Company from "./components/Company";
 import Business from "./components/Business";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { axios } from "axios";
 
 const App = () => {
