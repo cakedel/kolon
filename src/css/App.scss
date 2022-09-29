@@ -173,11 +173,35 @@
         center/cover;
     }
   }
-  .content02, .content04 {
+  .content02,
+  .content04 {
     flex-direction: row-reverse;
     text-align: right;
     p {
       text-align: right;
+    }
+  }
+}
+.Stock {
+  p {
+    margin-bottom: 50px;
+  }
+  strong {
+    display: block;
+    text-align: right;
+  }
+  .stocktable {
+    border-top: 2px solid #555;
+    border-bottom: 2px solid #555;
+    .stockNum {
+      font-size: 30px;
+      padding: 30px 0;
+      width: 400px;
+    }
+    .topTitle {
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+      width: 100px;
     }
   }
 }

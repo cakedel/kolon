@@ -22,7 +22,7 @@ const Header = () => {
           <ul>
             {GNbar.map((menu) => {
               return (
-                <Link to={menu.link}>
+                <Link to={menu.link} key={menu.id}>
                   <li key={menu.id}>{menu.tit}</li>
                 </Link>
               );
