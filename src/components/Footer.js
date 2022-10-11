@@ -21,7 +21,7 @@ const Footer = () => {
             </li>
           </ul>
           <h2>
-            <img src={`${process.env.PUBLIC_URL}/assets/img/logo.svg`} />
+            <img src={`${process.env.PUBLIC_URL}/assets/img/logo-white.svg`} />
           </h2>
         </div>
         <p>Copyright &copy; 2022 Kolon Industries, Inc. All Rights Reserved.</p>

@@ -332,36 +332,82 @@
   strong {
     display: block;
     text-align: right;
+    margin-bottom: 10px;
   }
   .stocktable {
-    border-spacing: 0;
     border-top: 2px solid #555;
-    border-bottom: 2px solid #555;
     margin-bottom: 100px;
     .stockNum {
+      padding: 30px 60px;
       font-size: 30px;
-      width: 400px;
-      background: #f9f9f9;
-    }
-    .topTitle {
-      border-bottom: 1px solid #ddd;
-      padding: 20px 0;
-      text-align: center;
-      border-spacing: 0;
-      width: 100px;
-    }
-    .bottomValue {
-      padding: 50px 0;
-      text-align: center;
+      background: #f7f7f7;
     }
     td {
-      border-left: 1px solid #ddd;
+      text-align: center;
+      width: 150px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    td ~ td {
+      border-left: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .topTitle {
+      padding: 20px 2px;
+      font-weight: 600;
+    }
+    .bottomValue {
+      padding: 20px;
+    }
+  }
+  .divideInfo {
+    border-top: 3px solid #555;
+    thead {
+      background: #f7f7f7;
+      text-align: center;
+      font-weight: 700;
+      td {
+        &.kind {
+          padding: 30px 50px;
+        }
+        &.sort {
+          padding: 30px 30px;
+        }
+        &.year {
+          padding: 30px 15px;
+        }
+      }
+      td ~ td {
+        border-left: 1px solid rgba(0, 0, 0, 0.05);
+      }
+    }
+    tbody {
+      .title {
+        padding: 30px 40px;
+      }
+      td {
+        border-left: 1px solid rgba(0, 0, 0, 0.05);
+        border-bottom: 1px solid #e6e6e6;
+      }
+      tr {
+        border-bottom: 1px solid #e6e6e6;
+      }
+      .stockSort {
+        text-align: center;
+        font-weight: 600;
+      }
+      .number {
+        text-align: right;
+        padding: 20px 30px;
+      }
+      tr {
+        text-align: center;
+      }
     }
   }
 }
 
 .Footer {
-  background: #f9f9f9;
+  background: #333;
+  color: #fff;
   .container {
     justify-content: space-between;
     padding: 30px 0;
@@ -372,10 +418,12 @@
     }
     h2 {
       width: 250px;
+      text-align: right;
     }
   }
   p {
     font-size: 13px;
     padding-bottom: 20px;
+    color: #888;
   }
 }
