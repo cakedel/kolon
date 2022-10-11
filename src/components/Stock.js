@@ -17,7 +17,7 @@ const Stock = ({ stockData }) => {
   return (
     <section className="Stock section">
       <div className="inner">
-        <h3>주주의 편의를 위해 실시간 주가정보를 제공해드립니다</h3>
+        <h3>주가정보</h3>
         <strong>{yesterday} 기준</strong>
         <table className="stocktable">
           <tbody>
