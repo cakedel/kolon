@@ -1,25 +1,27 @@
 import Wrapper from "./components/Wrapper";
-import MainVisual from "./components/MainVisual";
 import MainContents from "./components/MainContents";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
 import Stock from "./components/Stock";
-import Company from "./components/Company";
-import Business from "./components/Business";
+import Product from "./components/Product";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Layout from "./components/Layout";
+import Employment from "./components/Employment";
+import Sustain from "./components/Sustain";
+import Company from "./components/Company";
 
 const App = () => {
   const serviceKey =
     "H9Z28aMsFmBs58iRwg8%2FmcKOEtKEKRRD5bzlertTgbLMLt2%2FwYspNVmVSZpTJpFxWFIE%2Bxgf%2BCk9GZdOcne5%2FQ%3D%3D";
   const [data, getData] = useState();
-  const desterday = new Date();
-  const year = desterday.getFullYear();
-  const month = ("0" + (desterday.getMonth() + 1)).slice(-2);
-  const theDayBefroeYesterday = ("0" + (desterday.getDate())).slice(-2);
-  const desterDate = year + month + theDayBefroeYesterday;
-  console.log(desterDate);
+  const theday = new Date();
+  const year = theday.getFullYear();
+  const month = ("0" + (theday.getMonth() + 1)).slice(-2);
+  const yesterday = ("0" + (theday.getDate() - 1)).slice(-2);
+  const today = ("0" + (theday.getDate())).slice(-2);
+  const yesterdate = year + month + yesterday;
+  const todate = year + month + today;
+
   useEffect(() => {
     const url = `https://apis.data.go.kr/1160100/service/GetStockSecuritiesInfoService/getStockPriceInfo?serviceKey=${serviceKey}&resultType=json&isinCd=KR7120110002&mrktCtg=KOSPI&basDt=20220928`;
     const getStock = async () => {
@@ -30,31 +32,21 @@ const App = () => {
   }, []);
   console.log(data);
   return (
-    <Wrapper>
-      <Header />
+    <div>
       {data ? (
-        <main>
-          <Routes>
-            <Route path="/" element={<MainVisual />} />
-            <Route path="/company" element={<Company />} />
-            <Route path="/business" element={<Business />} />
-            <Route
-              path="/stock"
-              element={
-                <Stock stockData={data} beforeyesterdate={desterDate} />
-              }
-            />
-          </Routes>
           <Routes>
             <Route path="/" element={<MainContents />} />
-          </Routes>
-        </main>
+            <Route path="/subVisual/1" element={<Company GNbar={GNbar} />} />
+            <Route path="/subVisual/2" element={<Product GNbar={GNbar} />} />
+            <Route path="/subVisual/3" element={<Sustain GNbar={GNbar} />} />
+            <Route path="/subVisual/4" element={<Stock GNbar={GNbar} />} />
+            <Route path="/subVisual/5" element={<Employment GNbar={GNbar} />} />
+          </Route>
+        </Routes>
       ) : (
-        <div>Now loading</div>
+        <div>Now Loading...</div>
       )}
-
-      <Footer />
-    </Wrapper>
+    </div>
   );
 };
 
