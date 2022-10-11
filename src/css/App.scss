@@ -173,11 +173,45 @@
         center/cover;
     }
   }
-  .content02, .content04 {
+  .content02,
+  .content04 {
     flex-direction: row-reverse;
     text-align: right;
     p {
       text-align: right;
+    }
+  }
+}
+.Stock {
+  p {
+    margin-bottom: 50px;
+  }
+  strong {
+    display: block;
+    text-align: right;
+  }
+  .stocktable {
+    border-spacing: 0;
+    border-top: 2px solid #555;
+    border-bottom: 2px solid #555;
+    .stockNum {
+      font-size: 30px;
+      width: 400px;
+      background: #f9f9f9;
+    }
+    .topTitle {
+      border-bottom: 1px solid #ddd;
+      padding: 20px 0;
+      text-align: center;
+      border-spacing: 0;
+      width: 100px;
+    }
+    .bottomValue {
+      padding: 50px 0;
+      text-align: center;
+    }
+    td {
+      border-left: 1px solid #ddd;
     }
   }
 }
