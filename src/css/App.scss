@@ -325,7 +325,8 @@
   }
 }
 .Stock {
-  p {
+  h3 {
+    text-align: center;
     margin-bottom: 50px;
   }
   strong {
@@ -336,6 +337,7 @@
     border-spacing: 0;
     border-top: 2px solid #555;
     border-bottom: 2px solid #555;
+    margin-bottom: 100px;
     .stockNum {
       font-size: 30px;
       width: 400px;
