@@ -3,12 +3,14 @@ import React from "react";
 const Business = () => {
   return (
     <section className="Business section">
-      <h2>지속적인 성장을 위한 코오롱 인더스트리의 5대 핵심전략</h2>
-      <p className="subscribe">
-        5대 지속가능성 핵심전략을 토대로
-        16대 중점 추진과제를 선정하여 지속가능경영 추진체계를 정립함으로써
-        체계적인 지속가능경영을 실현해 나가고 있습니다.
-      </p>
+      <div className="inner">
+        <h3>지속적인 성장을 위한 코오롱 인더스트리의 5대 핵심전략</h3>
+        <div className="titExplain">
+          5대 지속가능성 핵심전략을 토대로 16대 중점 추진과제를 선정하여
+          지속가능경영 추진체계를 정립함으로써 체계적인 지속가능경영을 실현해
+          나가고 있습니다.
+        </div>
+      </div>
       <div className="inner">
         <div className="strategy content01">
           <div className="desc">
@@ -18,7 +20,7 @@ const Business = () => {
             <p>탄소 발자국 관리 확대</p>
             <p>글로벌이니셔티브 참여확대</p>
           </div>
-          <figure className="itm01"></figure>
+          <figure className="item01"></figure>
         </div>
         <div className="strategy content02">
           <div className="desc">
@@ -28,7 +30,7 @@ const Business = () => {
             <p>Recycle PET 적용 제품 비중 확대</p>
             <p>Bio-Based 제품 개발 및 사업화</p>
           </div>
-          <figure className="itm02"></figure>
+          <figure className="item02"></figure>
         </div>
         <div className="strategy content03">
           <div className="desc">
@@ -38,7 +40,7 @@ const Business = () => {
             <p>중대해 예방 체계 내재화</p>
             <p>ESH 정보 관리 시스템 구축</p>
           </div>
-          <figure className="itm03"></figure>
+          <figure className="item03"></figure>
         </div>
         <div className="strategy content04">
           <div className="desc">
@@ -48,7 +50,7 @@ const Business = () => {
             <p>협력사 공정거래</p>
             <p>노사 상생 및 인권존중 조직문화 활성화</p>
           </div>
-          <figure className="itm04"></figure>
+          <figure className="item04"></figure>
         </div>
         <div className="strategy content05">
           <div className="desc">
@@ -58,7 +60,7 @@ const Business = () => {
             <p>반부패/컴플라이언스 경영 시스템 강화</p>
             <p>정보 보호 시스템 개선</p>
           </div>
-          <figure className="itm05"></figure>
+          <figure className="item05"></figure>
         </div>
       </div>
     </section>
