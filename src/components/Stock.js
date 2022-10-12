@@ -3,27 +3,25 @@ import React from "react";
 const Stock = ({ stockData }) => {
   const kolonStock = stockData.response.body.items.item[0];
   console.log(kolonStock);
-  const yesterdayStock = kolonStock.clpr;
-  const vsStock = kolonStock.vs;
-  const stockNum = Number(yesterdayStock);
-  const vsStocknum = Number(vsStock);
+  const stockPrice = Number(kolonStock.clpr);
   const trquStockNum = Number(kolonStock.trqu);
-  const date = new Date();
-  const day = date.getDate() - 1;
-  const year = date.getFullYear();
-  const month = "0" + date.getMonth();
-  const yesterday = `${year}-${month}-${day}`;
+  const hiprStockNum = Number(kolonStock.hipr)
+  const loprStockNum = Number(kolonStock.lopr)
+  const mkpStockNum = Number(kolonStock.mkp)
+  const fltRtStockNum = Number(kolonStock.fltRt)
+
+  const date = kolonStock.basDt;
 
   return (
     <section className="Stock section">
       <div className="inner">
         <h3>주가정보</h3>
-        <strong>{yesterday} 기준</strong>
+        <strong>{date} 기준</strong>
         <table className="stocktable">
           <tbody>
             <tr>
               <th className="stockNum" rowSpan={2}>
-                {stockNum.toLocaleString()}
+                {stockPrice.toLocaleString()}
               </th>
               <td className="topTitle bottomLine">전일대비</td>
               <td className="topTitle bottomLine">등락률</td>
@@ -33,11 +31,13 @@ const Stock = ({ stockData }) => {
               <td className="topTitle bottomLine">거래량</td>
             </tr>
             <tr>
-              <td className="bottomValue">{vsStocknum.toLocaleString()}</td>
-              <td className="bottomValue">{kolonStock.fltRt}</td>
-              <td className="bottomValue">{kolonStock.mkp}</td>
-              <td className="bottomValue">{kolonStock.hipr}</td>
-              <td className="bottomValue">{kolonStock.lopr}</td>
+              <td className="bottomValue">{stockPrice.toLocaleString()}</td>
+              <td className="bottomValue">{fltRtStockNum.toFixed(2)}</td>
+              <td className="bottomValue">{mkpStockNum.toLocaleString()}</td>
+              <td className="bottomValue">{hiprStockNum.toLocaleString()}</td>
+              <td className="bottomValue">
+                {loprStockNum.toLocaleString()}
+              </td>
               <td className="bottomValue">{trquStockNum.toLocaleString()}</td>
             </tr>
           </tbody>

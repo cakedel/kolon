@@ -6,11 +6,6 @@
     text-align: center;
     margin-bottom: 10px;
   }
-  p {
-    font-size: 18px;
-    text-align: center;
-  }
-
   h3 {
     font-size: 30px;
     font-weight: 700;
@@ -19,6 +14,7 @@
   }
   .titExplain {
     width: 700px;
+    font-weight: 300;
     margin: auto 0 auto auto;
     word-break: keep-all;
     text-align: right;
@@ -54,8 +50,7 @@
     .Gnb ul {
       display: flex;
       gap: 30px;
-      font-size: 18px;
-      font-weight: 500;
+      font-size: 17px;
     }
     .sideBar {
       display: flex;
@@ -244,16 +239,17 @@
         }
         .explain {
           word-break: keep-all;
+          font-weight: 300;
         }
       }
       .bottom {
         display: grid;
-        grid-template-columns: repeat(2, 200px);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         row-gap: 20px;
         column-gap: 50px;
         div {
-          font-size: 20px;
+          font-size: 16px;
           font-weight: 500;
           color: rgb(179, 179, 179);
         }
@@ -281,30 +277,53 @@
 }
 .Business {
   .strategy {
-    padding: 100px 0;
     display: flex;
     justify-content: space-between;
-    span {
-      display: inline-block;
-      color: transparent;
-      font-size: 200px;
-      font-weight: 900;
-      -webkit-text-stroke-width: 2px;
-      -webkit-text-stroke-color: #333;
+    .desc {
+      position: relative;
+      padding: 200px 0;
+      span {
+        display: inline-block;
+        position: absolute;
+        color: #f2f2f2;
+        font-size: 400px;
+        font-weight: 900;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #f1f1f1;
+        z-index: -999;
+        &.evenSpan {
+          top: -100px;
+          left: -80px;
+        }
+        &.oddSpan {
+          top: -100px;
+          right: -80px;
+        }
+      }
+      strong {
+        display: inline-block;
+        font-size: 40px;
+        font-weight: 700;
+        word-break: keep-all;
+        margin-bottom: 30px;
+      }
+      p {
+        font-size: 18px;
+        font-weight: 300;
+      }
+      p:not(:last-child) {
+        margin-bottom: 10px;
+      }
+      .contents:nth-child(odd) {
+        text-align: left;
+      }
+      .contents:nth-child(even) {
+        text-align: right;
+      }
     }
-    h3 {
-      font-size: 40px;
-      font-weight: 700;
-      width: 400px;
-      word-break: keep-all;
-      margin-bottom: 30px;
-    }
-    p {
-      text-align: left;
-    }
+
     figure {
       width: 500px;
-      height: 600px;
       border-radius: 20px;
     }
     @for $i from 1 through 5 {
@@ -316,6 +335,10 @@
       }
     }
   }
+  .strategy:not(:last-child) {
+    margin-bottom: 150px;
+  }
+
   .content02,
   .content04 {
     flex-direction: row-reverse;
@@ -353,18 +376,18 @@
     }
     .topTitle {
       padding: 20px 2px;
-      font-weight: 600;
+      font-weight: 500;
     }
     .bottomValue {
       padding: 20px;
     }
   }
   .divideInfo {
-    border-top: 3px solid #555;
+    border-top: 2px solid #555;
     thead {
       background: #f7f7f7;
       text-align: center;
-      font-weight: 700;
+      font-weight: 500;
       td {
         &.kind {
           padding: 30px 50px;
@@ -376,13 +399,13 @@
           padding: 30px 15px;
         }
       }
-      td ~ td {
-        border-left: 1px solid rgba(0, 0, 0, 0.05);
-      }
     }
     tbody {
       .title {
         padding: 30px 40px;
+      }
+      th {
+        font-weight: 500;
       }
       td {
         border-left: 1px solid rgba(0, 0, 0, 0.05);
@@ -393,7 +416,7 @@
       }
       .stockSort {
         text-align: center;
-        font-weight: 600;
+        font-weight: 500;
       }
       .number {
         text-align: right;
@@ -405,7 +428,90 @@
     }
   }
 }
-
+.Employment {
+  .writeBtn {
+    display: block;
+    border: 1px solid #999;
+    outline: none;
+    padding: 5px 15px;
+    font-size: 13px;
+    border-radius: 5px;
+    margin: auto 0 auto auto;
+    cursor: pointer;
+  }
+  .title {
+    margin-bottom: 30px;
+    h3 {
+      display: inline-block;
+      text-align: left;
+      padding-right: 50px;
+    }
+    p {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 300;
+      span {
+        color: rgb(46, 154, 255);
+        font-size: 25px;
+        font-weight: 500;
+        padding: 0 5px;
+      }
+    }
+  }
+  .employTable {
+    border-top: 2px solid #555;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+    thead {
+      font-weight: 500;
+      td {
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid #d6d6d6;
+        &.number {
+          width: 10%;
+        }
+        &.sort {
+          width: 10%;
+        }
+        &.company {
+          width: 15%;
+        }
+        &.title {
+          width: 45%;
+        }
+        &.date {
+          width: 20%;
+        }
+      }
+    }
+    tbody {
+      td {
+        font-size: 14px;
+        padding: 15px;
+        text-align: center;
+        &.boardCom {
+          color: #999;
+        }
+        &.boardTit {
+          text-align: left;
+          cursor: pointer;
+        }
+      }
+      tr:nth-child(even) {
+        background: #f9f9f9;
+      }
+      span {
+        background: #222;
+        color: #fff;
+        font-weight: 300;
+        font-size: 13px;
+        padding: 5px 10px 7px 10px;
+        border-radius: 15px;
+      }
+    }
+  }
+}
 .Footer {
   background: #222;
   color: #fff;
