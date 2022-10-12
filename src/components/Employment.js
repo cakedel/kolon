@@ -14,8 +14,8 @@ const Employment = ({ match }) => {
     <section className="Employment section">
       <div className="inner">
         <Routes>
-          <Route path="/" element={<List list={list} />}></Route>
-          <Route path="view/:id" exact render={<View list={list} />}></Route>
+          <Route path="/*" element={<List list={list} />}></Route>
+          <Route path="/view/:id" exact render={<View list={list} />}></Route>
           <Route
             path="/write"
             element={

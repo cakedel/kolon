@@ -10,13 +10,6 @@ import Sustain from "./components/Sustain";
 import Company from "./components/Company";
 
 const App = () => {
-  const GNbar = [
-    { id: 1, tit: "회사정보", link: "/company" },
-    { id: 2, tit: "제품정보", link: "/product" },
-    { id: 3, tit: "지속가능경영", link: "/sustain" },
-    { id: 4, tit: "투자정보", link: "/stock" },
-    { id: 5, tit: "채용정보", link: "/employment" },
-  ];
   const [data, getData] = useState();
 
   const SERVICE_KEY = process.env.REACT_APP_SERVICE_KEY;
@@ -34,13 +27,13 @@ const App = () => {
     <div>
       {data ? (
         <Routes>
-          <Route element={<Layout GNbar={GNbar} />}>
-            <Route path="/" element={<MainContents />} />
-            <Route path="/subVisual/1" element={<Company />} />
-            <Route path="/subVisual/2" element={<Product />} />
-            <Route path="/subVisual/3" element={<Sustain />} />
-            <Route path="/subVisual/4" element={<Stock stockData={data} />} />
-            <Route path="/subVisual/5/*" element={<Employment />} />
+          <Route element={<Layout />}>
+            <Route path="/*" element={<MainContents />} />
+            <Route path="/subMenu/1" element={<Company />} />
+            <Route path="/subMenu/2" element={<Product />} />
+            <Route path="/subMenu/3" element={<Sustain />} />
+            <Route path="/subMenu/4" element={<Stock stockData={data} />} />
+            <Route path="/subMenu/5/*" element={<Employment />} />
           </Route>
         </Routes>
       ) : (

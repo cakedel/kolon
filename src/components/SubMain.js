@@ -13,8 +13,8 @@ const SubMain = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<MainVisual />}></Route>
-        <Route path="/subVisual/:id" element={<SubVisual GNbar={GNbar}  />}></Route>
+        <Route path="/*" element={<MainVisual />}></Route>
+        <Route path="/subMenu/:id/*" element={<SubVisual GNbar={GNbar}  />}></Route>
       </Routes>
     </div>
   );

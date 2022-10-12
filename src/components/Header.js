@@ -3,11 +3,11 @@ import { Link, Router } from "react-router-dom";
 
 const Header = () => {
   const GNbar = [
-    { id: 1, tit: "회사정보", link: "/subVisual/1" },
-    { id: 2, tit: "제품정보", link: "/subVisual/2" },
-    { id: 3, tit: "지속가능경영", link: "/subVisual/3" },
-    { id: 4, tit: "투자정보", link: "/subVisual/4" },
-    { id: 5, tit: "채용정보", link: "/subVisual/5" },
+    { id: 1, tit: "회사정보", link: "/subMenu/1" },
+    { id: 2, tit: "제품정보", link: "/subMenu/2" },
+    { id: 3, tit: "지속가능경영", link: "/subMenu/3" },
+    { id: 4, tit: "투자정보", link: "/subMenu/4" },
+    { id: 5, tit: "채용정보", link: "/subMenu/5" },
   ];
   return (
     <header className="Header">

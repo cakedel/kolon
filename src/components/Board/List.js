@@ -35,7 +35,7 @@ const List = ({ list, num }) => {
                     <span>{it.sort}</span>
                   </td>
                   <td className="boardCom">{it.company}</td>
-                  <td className="boardTit" onClick={LINK("view" + it.id)}>
+                  <td className="boardTit" onClick={LINK("view/" + it.id)}>
                     {it.title}
                   </td>
                   <td className="boardDt">{it.date}</td>
