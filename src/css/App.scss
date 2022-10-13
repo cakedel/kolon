@@ -511,6 +511,41 @@
       }
     }
   }
+  .viewTable {
+    border-top: 2px solid #555;
+    margin-bottom: 30px;
+    tbody {
+      tr {
+        &.bottomLineRow {
+          border-bottom: 1px solid #555;
+        }
+      }
+      td {
+        padding: 20px;
+        &.titleContent {
+          width: 100%;
+          border-bottom: 1px solid #f1f1f1;
+        }
+        &.viewTitle {
+          width: 10%;
+          font-weight: 500;
+          text-align: center;
+          background: #f1f1f1;
+        }
+        &.viewContent {
+          width: 70%;
+          max-height: 300px;
+          padding: 20px;
+          background: #f9f9f9;
+        }
+      }
+    }
+
+    .buttonGruop {
+      display: flex;
+      gap: 10px;
+    }
+  }
   .Write {
     h3 {
       text-align: left;
@@ -534,6 +569,13 @@
       .title {
         width: 100%;
         height: 300px;
+      }
+      .inputTitle {
+        width: 100%;
+      }
+      .inputContent {
+        height: 300px;
+        width: 100%;
       }
     }
   }

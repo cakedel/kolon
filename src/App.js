@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <div>
-      {/* {data ? ( */}
+      {data ? (
         <Routes>
           <Route element={<Layout />}>
             <Route path="/*" element={<MainContents />} />
@@ -36,9 +36,9 @@ const App = () => {
             <Route path="/subMenu/5/*" element={<Employment />} />
           </Route>
         </Routes>
-      {/* ) : (
+      ) : (
         <div>Now Loading...</div>
-      )} */}
+      )}
     </div>
   );
 };

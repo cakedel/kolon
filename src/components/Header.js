@@ -29,13 +29,13 @@ const Header = () => {
           </ul>
         </nav>
         <div className="sideBar">
-          <Link to="/">
+          <Link to="/*">
             <i className="xi-globus" />
           </Link>
-          <Link to="/">
+          <Link to="/*">
             <i className="xi-search" />
           </Link>
-          <Link to="/">
+          <Link to="/*">
             <i className="xi-mail-o" />
           </Link>
         </div>

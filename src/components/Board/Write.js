@@ -1,6 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Write = ({ list, setList, input, setInput, num }) => {
+  const inputSort = useRef();
+  const LINK = useNavigate();
   const handleInput = (e) => {
     const { name, value } = e.target;
     setInput({ ...input, [name]: value, id: num.current });
@@ -16,17 +19,16 @@ const Write = ({ list, setList, input, setInput, num }) => {
       content: "",
       date: "",
     });
+    LINK("/subMenu/5");
   };
 
-  React.useEffect(() => {
-    if (input.sort !== "경력" || "신입") {
-      alert("경력 유무를 입력해주세요.");
-    }
-    console.log(input.sort)
-  }, [input.sort]);
-
   const writeBoard = () => {
-    submitList();
+    if (inputSort.current.value === "선택" || "") {
+      alert("경력 유무를 입력해주세요.");
+    } else {
+      submitList();
+    }
+    console.log(inputSort.current.value);
   };
 
   return (
@@ -42,6 +44,7 @@ const Write = ({ list, setList, input, setInput, num }) => {
                 value={input.sort || ""}
                 name="sort"
                 onChange={handleInput}
+                ref={inputSort}
               >
                 <option value="선택">선택</option>
                 <option value="경력">경력</option>
@@ -51,7 +54,6 @@ const Write = ({ list, setList, input, setInput, num }) => {
             <td className="writeTitle">회사명</td>
             <td>
               <input
-                className="fullWidth"
                 type="text"
                 value={input.company || ""}
                 name="company"
@@ -63,7 +65,7 @@ const Write = ({ list, setList, input, setInput, num }) => {
             <td className="writeTitle">제목</td>
             <td>
               <input
-                className="fullWidth"
+                className="inputTitle"
                 type="text"
                 value={input.title || ""}
                 name="title"
@@ -84,7 +86,7 @@ const Write = ({ list, setList, input, setInput, num }) => {
             <td className="writeTitle">내용</td>
             <td colSpan={3}>
               <input
-                className="title"
+                className="inputContent"
                 type="text"
                 value={input.content || ""}
                 name="content"

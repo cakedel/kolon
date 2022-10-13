@@ -6,16 +6,17 @@ import View from "./Board/View";
 import Modify from "./Board/Modify";
 import { Outlet } from "react-router-dom";
 
-const Employment = ({ match }) => {
+const Employment = () => {
   const [input, setInput] = useState({});
   const [list, setList] = useState([]);
   const num = useRef(1);
+
   return (
     <section className="Employment section">
       <div className="inner">
         <Routes>
           <Route path="/*" element={<List list={list} />}></Route>
-          <Route path="/view/:id" exact render={<View list={list} />}></Route>
+          <Route path="/view/:id" element={<View list={list} />}></Route>
           <Route
             path="/write"
             element={

@@ -2,7 +2,6 @@ import React from "react";
 
 const Stock = ({ stockData }) => {
   const kolonStock = stockData.response.body.items.item[0];
-  console.log(kolonStock);
   const stockPrice = Number(kolonStock.clpr);
   const trquStockNum = Number(kolonStock.trqu);
   const hiprStockNum = Number(kolonStock.hipr)
